@@ -34,13 +34,11 @@ const App = () => {
 
     return (
       <div> 
-       
-
-        <h2>Filtered Response</h2>
+         <h2>Filtered Response</h2>
         {options.length === 0 ? (
           <pre>{JSON.stringify(response, null, 2)}</pre>
         ) : (
-          <pre>
+          <code>
             {JSON.stringify(
               options.reduce((acc, opt) => {
                 acc[opt.label] = response[opt.value];
@@ -49,7 +47,7 @@ const App = () => {
               null,
               2
             )}
-          </pre>
+          </code>
         )}
       </div>
     );
